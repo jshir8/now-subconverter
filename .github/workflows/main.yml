@@ -34,8 +34,7 @@ jobs:
         sed -i 's/managed_config_prefix=http:\/\/127.0.0.1:25500/managed_config_prefix=https:\/\/sub.jshir.com/g' subconverter/pref.ini
         sed -i 's/async_fetch_ruleset=false/async_fetch_ruleset=true/g' subconverter/pref.ini
         sed -i 's/max_concurrent_threads=./max_concurrent_threads=1/g' subconverter/pref.ini
-    - name: Modify surfboard.conf by sed
-      if: ${{ env.modify_method == 'sed' }}
+    - name: Modify surfboard.conf
       run: |
         sed -i 's/dns-server\t=\tsystem,\t223.5.5.5/dns-server\t=\t119.29.29.29,\t223.5.5.5,\t1.2.4.8,\t180.76.76.76,\t117.50.10.10,\t114.114.114.114,\t8.8.8.8,\t1.1.1.1,\t101.6.6.6,\t9.9.9.9,\t116.62.218.19:443,\t208.67.220.220:443,\t208.67.222.222:443,\tsystem,\t[2400:3200::1],\t[2400:da00::6666],\t[2001:4860:4860::8888],\t[2606:4700:4700::1111],\t[2001:da8::666]/g' subconverter/base/surfboard.conf
         sed -i 's/ipv6\t=\tfalse/ipv6\t=\ttrue/g' subconverter/base/surfboard.conf
