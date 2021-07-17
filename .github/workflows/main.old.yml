@@ -1,4 +1,4 @@
-name: Update subconverter
+name: Update subconverter (old)
 
 on:
   workflow_dispatch:
