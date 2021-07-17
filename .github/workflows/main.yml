@@ -37,7 +37,7 @@ jobs:
     - name: Modify surfboard.conf
       run: |
         sed -i 's/dns-server[ ]=[ ]system,[ ]223.5.5.5/dns-server = 119.29.29.29, 223.5.5.5, 1.2.4.8, 180.76.76.76, 117.50.10.10, 114.114.114.114, 8.8.8.8, 1.1.1.1, 101.6.6.6, 9.9.9.9, 116.62.218.19:443, 208.67.220.220:443, 208.67.222.222:443, system/g' subconverter/base/surfboard.conf
-        sed -i 's/ipv6\t=\tfalse/ipv6\t=\ttrue/g' subconverter/base/surfboard.conf
+        sed -i 's/ipv6[ ]=[ ]false/ipv6 = true/g' subconverter/base/surfboard.conf
     - name: Add & Commit
       uses: EndBug/add-and-commit@v6
       with:
